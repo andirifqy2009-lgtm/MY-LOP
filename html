@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Shafiqah</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(12px);
+      padding: 40px 25px;
+      border-radius: 30px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      z-index: 2;
+    }
+
+    .cake {
+      font-size: 70px;
+      animation: bounce 2s infinite;
+    }
+
+    h1 {
+      font-size: 38px;
+      margin: 15px 0 5px;
+    }
+
+    .name {
+      font-size: 28px;
+      font-weight: bold;
+      color: #fff4f7;
+      text-shadow: 0 2px 10px rgba(0,0,0,.15);
+    }
+
+    .date {
+      margin-top: 10px;
+      font-size: 18px;
+      opacity: .9;
+    }
+
+    .message {
+      margin-top: 25px;
+      line-height: 1.8;
+      font-size: 16px;
+      min-height: 120px;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 13px 25px;
+      border: none;
+      border-radius: 30px;
+      background: white;
+      color: #e75480;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,.15);
+    }
+
+    button:hover {
+      transform: scale(1.08);
+    }
+
+    #surprise {
+      display: none;
+      margin-top: 25px;
+      font-size: 18px;
+      line-height: 1.8;
+      animation: fadeIn 1s;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -50px;
+      font-size: 25px;
+      animation: float 7s linear infinite;
+      opacity: .7;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: .8;
+      }
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes bounce {
+      0%,100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media(max-width:500px) {
+      h1 {
+        font-size: 30px;
+      }
+
+      .name {
+        font-size: 23px;
+      }
+
+      .container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Hati yang beterbangan -->
+  <div class="heart" style="left:5%; animation-delay:0s;">♥</div>
+  <div class="heart" style="left:15%; animation-delay:2s;">♥</div>
+  <div class="heart" style="left:28%; animation-delay:4s;">♥</div>
+  <div class="heart" style="left:42%; animation-delay:1s;">♥</div>
+  <div class="heart" style="left:55%; animation-delay:3s;">♥</div>
+  <div class="heart" style="left:68%; animation-delay:5s;">♥</div>
+  <div class="heart" style="left:80%; animation-delay:2s;">♥</div>
+  <div class="heart" style="left:92%; animation-delay:4s;">♥</div>
+
+  <div class="container">
+
+    <div class="cake">🎂</div>
+
+    <h1>Happy Birthday</h1>
+
+    <div class="name">
+      Shafiqah Durratul Hikmah
+    </div>
+
+    <div class="date">
+      3 November
+    </div>
+
+    <div class="message" id="typing"></div>
+
+    <button onclick="showSurprise()">
+      Klik untuk kejutan
+    </button>
+
+    <div id="surprise">
+      ✨ Selamat ulang tahun, Shafiqah! ✨
+      <br><br>
+
+      Semoga di umur yang baru ini kamu selalu diberikan
+      kesehatan, kebahagiaan, dan banyak hal baik dalam hidup.
+      <br><br>
+
+      Semoga semua impian dan harapanmu perlahan bisa
+      menjadi kenyataan.
+      <br><br>
+
+      Terima kasih sudah menjadi seseorang yang begitu
+      berarti. Semoga hari ulang tahunmu kali ini menjadi
+      salah satu hari yang paling indah.
+      <br><br>
+
+      <b>Happy Birthday, Shafiqah.</b>
+      <br>
+      <b>3 November akan selalu menjadi hari yang spesial.</b>
+    </div>
+
+  </div>
+
+  <script>
+
+    const text =
+      "Hari ini adalah hari yang spesial, karena seseorang yang sangat berarti sedang bertambah usia. Semoga senyummu selalu ada dan hari-harimu dipenuhi kebahagiaan...";
+
+    let i = 0;
+
+    function typingEffect() {
+      if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typingEffect, 35);
+      }
+    }
+
+    typingEffect();
+
+    function showSurprise() {
+      const surprise = document.getElementById("surprise");
+
+      surprise.style.display = "block";
+
+      // Membuat hati tambahan
+      for (let i = 0; i < 20; i++) {
+        const heart = document.createElement("div");
+
+        heart.innerHTML = "♥";
+        heart.classList.add("heart");
+
+        heart.style.left = Math.random() * 100 + "%";
+        heart.style.animationDuration =
+          (Math.random() * 4 + 4) + "s";
+
+        document.body.appendChild(heart);
+      }
+    }
+
+  </script>
+
+</body>
+</html>
